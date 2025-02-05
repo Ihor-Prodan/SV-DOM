@@ -1,0 +1,111 @@
+.projects-section {
+  padding: 60px 10%;
+  background-color: #fff;
+  text-align: center;
+}
+
+.projects-title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #333;
+  position: relative;
+  display: inline-block;
+}
+
+.projects-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #e63946;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.gallery-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.gallery-content {
+  width: 100%;
+}
+
+.gallery-arrow {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  color: #fff;
+  z-index: 10;
+}
+
+.gallery-arrow-left {
+  margin-right: 10px;
+}
+
+.gallery-arrow-right {
+  margin-left: 10px;
+}
+
+/* Стилі для ImageList */
+.MuiImageList-root {
+  margin: 0 auto;
+}
+
+.MuiImageListItem-root {
+  transition: all 0.5s ease-in-out;
+}
+
+.MuiImageListItem-root img {
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.MuiImageListItem-root img:hover {
+  transform: scale(1.01);
+}
+
+.modal-container {
+  position: relative;
+  text-align: center;
+}
+
+.modal-image {
+  width: 100%;
+  max-height: 80vh;
+  border-radius: 8px;
+}
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.modal-arrow {
+  position: absolute;
+  top: 50%;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-arrow-left {
+  left: -80px;
+}
+
+.modal-arrow-right {
+  right: -80px;
+}

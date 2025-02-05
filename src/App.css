@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+}
+
+.app-container {
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.main-content {
+  padding: 2rem;
+  gap: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #f9f9f9;
+}
+
+

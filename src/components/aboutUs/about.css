@@ -1,0 +1,63 @@
+.about-us {
+  padding: 80px 10%;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+.about-us-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-us-title {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+.about-us-title::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 4px;
+  background-color: #e63946;
+  margin: 10px auto 0;
+}
+
+.about-us-text {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.about-us-services {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.about-us-services li {
+  font-size: 1.1rem;
+  color: #222;
+  background: #fff;
+  padding: 15px 20px;
+  margin: 10px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.about-us-services li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.about-us-services li span {
+  font-weight: 600;
+}
