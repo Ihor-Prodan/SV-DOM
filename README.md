@@ -1,1 +1,1 @@
-# [SV DOM](https://ihor-prodan.github.io/chat-App/)
+# [SV DOM](https://ihor-prodan.github.io/SV-DOM/)
