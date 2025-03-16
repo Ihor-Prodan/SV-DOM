@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useSwipeable } from 'react-swipeable'; // Імпортуємо бібліотеку для свайпів
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import Modal from '@mui/material/Modal';
@@ -39,6 +40,7 @@ const ProjectsSection: React.FC = () => {
     photo.itemDataTwo,
     photo.itemDataThry,
     photo.itemDataFour,
+    photo.itemDataFive,
   ];
 
   const activeGallery = galleries[activeGalleryIndex];
@@ -78,8 +80,15 @@ const ProjectsSection: React.FC = () => {
     }, 300);
   };
 
+  // Обробка свайпів для зображень в модалі
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: handleNextImage,
+    onSwipedRight: handlePrevImage,
+    trackMouse: true, // Дозволяє тестувати на комп'ютері через мишу
+  });
+
   return (
-    <section className="projects-section">
+    <section className="projects-section" id="projekty">
       <h2 className="projects-title">Naše projekty</h2>
       <div className="gallery-slider">
         <IconButton
@@ -128,7 +137,7 @@ const ProjectsSection: React.FC = () => {
         onClose={handleCloseModal}
         aria-labelledby="modal-image"
       >
-        <Box sx={modalStyle} className="modal-container">
+        <Box sx={modalStyle} className="modal-container" {...swipeHandlers}>
           <img
             src={activeGallery[selectedImageIndex].img}
             alt={activeGallery[selectedImageIndex].title}
@@ -157,236 +166,295 @@ export default ProjectsSection;
 const photo = {
   itemData: [
     {
-      img: '/public/images/5260274965897407991.jpg',
+      img: 'images/5260274965897407991.jpg',
       title: 'Work',
       rows: 2,
       cols: 2,
     },
     {
-      img: '/public/images/5260274965897407992.jpg',
+      img: 'images/5260274965897407992.jpg',
       title: 'Work',
     },
     {
-      img: '/public/images/5260274965897408017.jpg',
+      img: 'images/5260274965897408017.jpg',
       title: 'Work',
     },
     {
-      img: '/public/images/5260274965897408019.jpg',
-      title: 'Work',
-      cols: 2,
-    },
-    {
-      img: '/public/images/5262979313530170184.jpg',
+      img: 'images/5260274965897408019.jpg',
       title: 'Work',
       cols: 2,
     },
     {
-      img: '/public/images/5262979313530170186.jpg',
+      img: 'images/5262979313530170184.jpg',
+      title: 'Work',
+      cols: 2,
+    },
+    {
+      img: 'images/5262979313530170186.jpg',
       title: 'Work',
       rows: 2,
       cols: 2,
     },
     {
-      img: '/public/images/5262979313530170188.jpg',
+      img: 'images/5262979313530170188.jpg',
       title: 'Work',
     },
     {
-      img: '/public/images/5262979313530170190.jpg',
+      img: 'images/5262979313530170190.jpg',
       title: 'Work',
     },
     {
-      img: '/public/images/5262979313530170193.jpg',
+      img: 'images/5262979313530170193.jpg',
       title: 'Work',
       rows: 2,
       cols: 2,
     },
     {
-      img: '/public/images/5262979313530170192.jpg',
+      img: 'images/5262979313530170192.jpg',
       title: 'Work',
     },
     {
-      img: '/public/images/5262979313530170194.jpg',
+      img: 'images/5262979313530170194.jpg',
       title: 'Work',
     },
     {
-      img: '/public/images/5262979313530170195.jpg',
+      img: 'images/5262979313530170195.jpg',
       title: 'Work',
       cols: 2,
     },
   ],
   itemDataTwo: [
     {
-      img: '/public/images/5262979313530170196.jpg',
+      img: 'images/5262979313530170196.jpg',
       title: 'Work',
       rows: 2,
       cols: 2,
     },
     {
-      img: '/public/images/5262979313530170197.jpg',
+      img: 'images/5262979313530170197.jpg',
       title: 'Work',
     },
     {
-      img: '/public/images/5262979313530170199.jpg',
+      img: 'images/5262979313530170199.jpg',
       title: 'Work',
     },
     {
-      img: '/public/images/5262979313530170200.jpg',
-      title: 'Work',
-      cols: 2,
-    },
-    {
-      img: '/public/images/5262979313530170201.jpg',
+      img: 'images/5262979313530170200.jpg',
       title: 'Work',
       cols: 2,
     },
     {
-      img: '/public/images/5262979313530170204.jpg',
+      img: 'images/5262979313530170201.jpg',
+      title: 'Work',
+      cols: 2,
+    },
+    {
+      img: 'images/5262979313530170204.jpg',
       title: 'Work',
       rows: 2,
       cols: 2,
     },
     {
-      img: '/public/images/5262979313530170208.jpg',
+      img: 'images/5262979313530170208.jpg',
       title: 'Work',
     },
     {
-      img: '/public/images/5262979313530170211.jpg',
+      img: 'images/5262979313530170211.jpg',
       title: 'Work',
     },
     {
-      img: '/public/images/5262979313530170213.jpg',
+      img: 'images/5262979313530170213.jpg',
       title: 'Work',
       rows: 2,
       cols: 2,
     },
     {
-      img: '/public/images/5262979313530170215.jpg',
+      img: 'images/5262979313530170215.jpg',
       title: 'Work',
     },
     {
-      img: '/public/images/5262979313530170216.jpg',
+      img: 'images/5262979313530170216.jpg',
       title: 'Work',
     },
     {
-      img: '/public/images/5262979313530170217.jpg',
+      img: 'images/5262979313530170217.jpg',
       title: 'Work',
       cols: 2,
     },
   ],
   itemDataThry: [
     {
-      img: '/public/images/5262979313530170219.jpg',
+      img: 'images/5262979313530170219.jpg',
       title: 'Work',
       rows: 2,
       cols: 2,
     },
     {
-      img: '/public/images/5262979313530170220.jpg',
+      img: 'images/5262979313530170220.jpg',
       title: 'Work',
     },
     {
-      img: '/public/images/5262979313530170222.jpg',
+      img: 'images/5262979313530170222.jpg',
       title: 'Work',
     },
     {
-      img: '/public/images/5262979313530170221.jpg',
-      title: 'Work',
-      cols: 2,
-    },
-    {
-      img: '/public/images/5262979313530170224.jpg',
+      img: 'images/5262979313530170221.jpg',
       title: 'Work',
       cols: 2,
     },
     {
-      img: '/public/images/5262979313530170225.jpg',
+      img: 'images/5262979313530170224.jpg',
+      title: 'Work',
+      cols: 2,
+    },
+    {
+      img: 'images/5262979313530170225.jpg',
       title: 'Work',
       rows: 2,
       cols: 2,
     },
     {
-      img: '/public/images/5262979313530170226.jpg',
+      img: 'images/5262979313530170226.jpg',
       title: 'Work',
     },
     {
-      img: '/public/images/5262979313530170227.jpg',
+      img: 'images/5262979313530170227.jpg',
       title: 'Work',
     },
     {
-      img: '/public/images/5262979313530170228.jpg',
+      img: 'images/5262979313530170228.jpg',
       title: 'Work',
       rows: 2,
       cols: 2,
     },
     {
-      img: '/public/images/5262979313530170230.jpg',
+      img: 'images/5262979313530170230.jpg',
       title: 'Work',
     },
     {
-      img: '/public/images/5262979313530170231.jpg',
+      img: 'images/5262979313530170231.jpg',
       title: 'Work',
     },
     {
-      img: '/public/images/5262979313530170243.jpg',
+      img: 'images/5262979313530170243.jpg',
       title: 'Work',
       cols: 2,
     },
   ],
   itemDataFour: [
     {
-      img: '/public/images/5262979313530170246.jpg',
+      img: 'images/5262979313530170246.jpg',
       title: 'Work',
       rows: 2,
       cols: 2,
     },
     {
-      img: '/public/images/5262979313530170247.jpg',
+      img: 'images/5262979313530170247.jpg',
       title: 'Work',
     },
     {
-      img: '/public/images/5262979313530170248.jpg',
+      img: 'images/5262979313530170248.jpg',
       title: 'Work',
     },
     {
-      img: '/public/images/5262979313530170251.jpg',
-      title: 'Work',
-      cols: 2,
-    },
-    {
-      img: '/public/images/5264915952938642805.jpg',
+      img: 'images/5262979313530170251.jpg',
       title: 'Work',
       cols: 2,
     },
     {
-      img: '/public/images/5265231113343856054.jpg',
+      img: 'images/5264915952938642805.jpg',
+      title: 'Work',
+      cols: 2,
+    },
+    {
+      img: 'images/5265231113343856054.jpg',
       title: 'Work',
       rows: 2,
       cols: 2,
     },
     {
-      img: '/public/images/5265231113343856055.jpg',
+      img: 'images/5265231113343856055.jpg',
       title: 'Work',
     },
     {
-      img: '/public/images/5265231113343856056.jpg',
+      img: 'images/5265231113343856056.jpg',
       title: 'Work',
     },
     {
-      img: '/public/images/5265231113343856057.jpg',
+      img: 'images/5265231113343856057.jpg',
       title: 'Work',
       rows: 2,
       cols: 2,
     },
     {
-      img: '/public/images/5265231113343856059.jpg',
+      img: 'images/5265231113343856059.jpg',
       title: 'Work',
     },
     {
-      img: '/public/images/5262979313530170231.jpg',
+      img: 'images/5262979313530170231.jpg',
       title: 'Work',
     },
     {
-      img: '/public/images/5262979313530170243.jpg',
+      img: 'images/5262979313530170243.jpg',
+      title: 'Work',
+      cols: 2,
+    },
+  ],
+  itemDataFive: [
+    {
+      img: 'images/5292033994193497955.jpg',
+      title: 'Work',
+      rows: 2,
+      cols: 2,
+    },
+    {
+      img: 'images/5292033994193497956.jpg',
+      title: 'Work',
+    },
+    {
+      img: 'images/5292033994193497957.jpg',
+      title: 'Work',
+    },
+    {
+      img: 'images/5292033994193497958.jpg',
+      title: 'Work',
+      cols: 2,
+    },
+    {
+      img: 'images/5292033994193497959.jpg',
+      title: 'Work',
+      cols: 2,
+    },
+    {
+      img: 'images/5292033994193497960.jpg',
+      title: 'Work',
+      rows: 2,
+      cols: 2,
+    },
+    {
+      img: 'images/5292033994193497961.jpg',
+      title: 'Work',
+    },
+    {
+      img: 'images/5292033994193497962.jpg',
+      title: 'Work',
+    },
+    {
+      img: 'images/5292033994193497963.jpg',
+      title: 'Work',
+      rows: 2,
+      cols: 2,
+    },
+    {
+      img: 'images/5292033994193497964.jpg',
+      title: 'Work',
+    },
+    {
+      img: 'images/5292033994193497965.jpg',
+      title: 'Work',
+    },
+    {
+      img: 'images/5293989625947351883.jpg',
       title: 'Work',
       cols: 2,
     },

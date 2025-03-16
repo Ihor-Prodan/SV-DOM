@@ -123,3 +123,9 @@
 .fade-in {
   opacity: 1;
 }
+
+@media (max-width: 680px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+}

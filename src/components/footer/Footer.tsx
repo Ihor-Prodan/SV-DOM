@@ -3,7 +3,7 @@ import './footer.css';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="footer">
+    <footer className="footer" id="kontakt">
       <div className="footer-content">
         <div className="footer-info">
           <h3>Kontakt</h3>

@@ -38,8 +38,8 @@
   padding: 0;
   margin: 0;
 }
-
 .about-us-services li {
+  /* width: 100%; */
   font-size: 1.1rem;
   color: #222;
   background: #fff;
@@ -48,16 +48,146 @@
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
   transition: transform 0.3s ease-in-out;
+  position: relative;
+  flex-direction: column;
 }
 
 .about-us-services li:hover {
-  transform: translateY(-3px);
+  transform: translateY(0);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .about-us-services li span {
   font-weight: 600;
+}
+
+/* Випадаючий блок */
+.service-details {
+  width: 100%;
+  background: white;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  opacity: 0;
+  visibility: hidden;
+  max-height: 0;
+  overflow: hidden;
+  transform: translateY(-20px); /* Початкова позиція */
+  /* Затримка 2s для всіх властивостей при переході в стан "закрито" */
+  transition: opacity 0.6s ease 2s, visibility 0.6s ease 2s, max-height 0.6s ease 2s, transform 0.6s ease 2s;
+}
+
+/* Стиль для елементів при наведенні на <li> */
+.service-item:hover .service-details {
+  opacity: 1;
+  visibility: visible;
+  max-height: 1000px; /* Оберіть значення, яке точно вміщує вміст */
+  transform: translateY(0);
+  /* При наведенні немає затримки */
+  transition-delay: 0s;
+}
+
+.service-item .service-details {
+  transition-delay: 0s, 0s, 0s, 2s; /* Затримка на закриття після покидання елемента (2 секунди) */
+}
+
+/* Стилі для зображень */
+.service-details .images {
+  display: flex;
+  gap: 10px;
+}
+
+.service-details img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+@media (max-width: 1100px) {
+  .about-us {
+    padding: 60px 5%;
+  }
+
+  .about-us-title {
+    font-size: 2rem;
+  }
+
+  .about-us-text {
+    font-size: 1rem;
+  }
+
+  .about-us-services li {
+    font-size: 0.9rem;
+    padding: 12px 15px;
+  }
+
+  .service-details .images {
+    gap: 8px;
+  }
+
+  .service-details img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 680px) {
+  .about-us {
+    padding: 40px 3%;
+  }
+
+  .about-us-title {
+    font-size: 2rem;
+  }
+
+  .about-us-text {
+    font-size: 1rem;
+  }
+
+  .about-us-services li {
+    font-size: 0.7rem;
+    padding: 10px 12px;
+  }
+
+  .service-details .images {
+    gap: 6px;
+  }
+
+  .service-details img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 500px) {
+  .about-us {
+    padding: 40px 3%;
+  }
+
+  .about-us-title {
+    font-size: 2rem;
+  }
+
+  .about-us-text {
+    font-size: 1rem;
+  }
+
+  .about-us-services li {
+    font-size: 0.5rem;
+    padding: 10px 12px;
+  }
+
+  .service-details .images {
+    gap: 6px;
+  }
+
+  .service-details img {
+    width: 50px;
+    height: 50px;
+  }
 }

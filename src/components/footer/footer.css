@@ -52,3 +52,46 @@
   font-size: 0.9rem;
   color: #aaa;
 }
+
+/* ========== АДАПТАЦІЯ ДЛЯ ПЛАНШЕТІВ (900px і менше) ========== */
+@media (max-width: 900px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-info,
+  .footer-socials {
+    min-width: 100%;
+  }
+
+  .footer-socials a {
+    display: inline-block;
+    margin: 5px 10px;
+  }
+}
+
+/* ========== АДАПТАЦІЯ ДЛЯ МОБІЛЬНИХ (600px і менше) ========== */
+@media (max-width: 600px) {
+  .footer {
+    padding: 30px 5%;
+  }
+
+  .footer-info h3,
+  .footer-socials h3 {
+    font-size: 1.2rem;
+  }
+
+  .footer-info p {
+    font-size: 0.9rem;
+  }
+
+  .footer-socials a {
+    font-size: 0.9rem;
+    margin: 3px 8px;
+  }
+
+  .footer-bottom {
+    font-size: 0.8rem;
+  }
+}

@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import './hero.css';
 
 const images = [
-  '/public/images/5260274965897407991.jpg',
-  '/public/images/5260274965897407992.jpg',
-  '/public/images/5260274965897408017.jpg',
-  '/public/images/5260274965897408018.jpg',
-  '/public/images/5260274965897408019.jpg',
-  '/public/images/5262979313530170247.jpg',
+  'images/5260274965897407991.jpg',
+  'images/5260274965897407992.jpg',
+  'images/5260274965897408017.jpg',
+  'images/5260274965897408018.jpg',
+  'images/5260274965897408019.jpg',
+  'images/5262979313530170247.jpg',
 ];
 
 const HeroSection: React.FC = () => {
@@ -31,6 +31,17 @@ const HeroSection: React.FC = () => {
     return () => clearInterval(interval);
   }, [nextImage]);
 
+  const handleNavClick = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+    sectionId: string,
+  ) => {
+    event.preventDefault();
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="hero">
       <div
@@ -48,7 +59,11 @@ const HeroSection: React.FC = () => {
       <h2 className={`hero-title ${isTitleVisible ? 'fade-up' : ''}`}>
         Kvalitná výstavba pre vašu budúcnosť
       </h2>
-      <a href="#kontakt" className="contact-button">
+      <a
+        href="#cont"
+        className="contact-button"
+        onClick={e => handleNavClick(e, 'kontakt')}
+      >
         <span></span> Kontaktujte nás
       </a>
     </section>
