@@ -7,11 +7,11 @@ const Footer: React.FC = () => {
       <div className="footer-content">
         <div className="footer-info">
           <h3>Kontakt</h3>
-          <p>📍 Adresa: Hlavná 123, Bratislava, Slovensko</p>
-          <p>📞 Telefón: +421 987 654 321</p>
-          <p>📧 Email: info@sv-dom.sk</p>
+          <p>📍 Adresa: Racianska 88B, Bratislava, Slovensko</p>
+          <p>📞 Telefón: +421 949 545 059</p>
+          <p>📧 Email: ivansvystak96@gmail.com</p>
         </div>
-        <div className="footer-socials">
+        {/* <div className="footer-socials">
           <h3>Sledujte nás</h3>
           <a href="#" className="social-link">
             Facebook
@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
           <a href="#" className="social-link">
             LinkedIn
           </a>
-        </div>
+        </div> */}
       </div>
       <div className="footer-bottom">
         <p>&copy; 2025 SV-DOM. Všetky práva vyhradené.</p>

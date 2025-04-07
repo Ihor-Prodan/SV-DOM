@@ -79,7 +79,7 @@ const AboutUsSection: React.FC = () => {
         <ul className="about-us-services">
           {services.map((service, index) => (
             <li key={index} className="service-item">
-              <span>✅ {service.title}</span>
+              <span className="service-text">✅ {service.title}</span>
               <div className="service-details">
                 <p>{service.description}</p>
                 <div
