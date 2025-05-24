@@ -56,9 +56,9 @@ const HeroSection: React.FC = () => {
           backgroundImage: `url(${images[nextImage]})`,
         }}
       ></div>
-      <h2 className={`hero-title ${isTitleVisible ? 'fade-up' : ''}`}>
+      <h1 className={`hero-title ${isTitleVisible ? 'fade-up' : ''}`}>
         Kvalitná výstavba pre vašu budúcnosť
-      </h2>
+      </h1>
       <a
         href="#cont"
         className="contact-button"

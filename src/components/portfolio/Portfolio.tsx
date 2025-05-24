@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useSwipeable } from 'react-swipeable'; // Імпортуємо бібліотеку для свайпів
+import { useSwipeable } from 'react-swipeable';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import Modal from '@mui/material/Modal';
@@ -80,11 +80,10 @@ const ProjectsSection: React.FC = () => {
     }, 300);
   };
 
-  // Обробка свайпів для зображень в модалі
   const swipeHandlers = useSwipeable({
     onSwipedLeft: handleNextImage,
     onSwipedRight: handlePrevImage,
-    trackMouse: true, // Дозволяє тестувати на комп'ютері через мишу
+    trackMouse: true,
   });
 
   return (
