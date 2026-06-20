@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import './hero.css';
 
 const images = [
-  'images/5260274965897407991.jpg',
-  'images/5260274965897407992.jpg',
-  'images/5260274965897408017.jpg',
-  'images/5260274965897408018.jpg',
-  'images/5260274965897408019.jpg',
-  'images/5262979313530170247.jpg',
+  'images/5260274965897407991.webp',
+  'images/5260274965897407992.webp',
+  'images/5260274965897408017.webp',
+  'images/5260274965897408018.webp',
+  'images/5260274965897408019.webp',
+  'images/5262979313530170247.webp',
 ];
 
 const HeroSection: React.FC = () => {

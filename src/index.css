@@ -1,5 +1,14 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --color-primary: #ff9e00;
+  --color-primary-dark: #e68900;
+  --color-text: #333;
+  --color-text-muted: #555;
+  --color-bg-light: #f8f9fa;
+  --color-bg-soft: #f4f4f4;
+  --color-dark: #1a1a1a;
+  --font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  font-family: var(--font-family);
   line-height: 1.5;
   font-weight: 400;
 
@@ -9,7 +18,7 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: var(--color-primary);
   text-decoration: inherit;
 }
 
@@ -24,7 +33,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--color-dark);
   cursor: pointer;
   transition: border-color 0.25s;
 }

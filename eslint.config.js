@@ -32,7 +32,14 @@ export default [
       '@typescript-eslint/no-unused-vars': 'warn',
       '@typescript-eslint/explicit-module-boundary-types': 'off',
     },
-    ignores: ['tailwind.config.cjs', 'postcss.config.js', 'vite.config.ts', 'eslint.config.js'],
+    ignores: [
+      'tailwind.config.cjs',
+      'postcss.config.js',
+      'vite.config.ts',
+      'eslint.config.js',
+      'dist/**',
+      'scripts/**',
+    ],
     settings: {
       react: {
         version: 'detect',

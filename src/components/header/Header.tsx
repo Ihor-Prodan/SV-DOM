@@ -9,23 +9,33 @@ const Header: React.FC = () => {
   const fullText = 'Stavebná Spoločnosť';
 
   useEffect(() => {
+    let typingInterval: ReturnType<typeof setInterval> | undefined;
+    let resetTimeout: ReturnType<typeof setTimeout> | undefined;
+
     const startAnimation = () => {
       let index = 0;
-      const textInterval = setInterval(() => {
-        setAnimatedText(fullText.slice(0, index + 1));
+      typingInterval = setInterval(() => {
         index++;
-        if (index === fullText.length) clearInterval(textInterval);
+        setAnimatedText(fullText.slice(0, index));
+        if (index === fullText.length && typingInterval) {
+          clearInterval(typingInterval);
+        }
       }, 100);
     };
 
     startAnimation();
 
     const mainInterval = setInterval(() => {
+      if (typingInterval) clearInterval(typingInterval);
       setAnimatedText('');
-      setTimeout(startAnimation, 500);
+      resetTimeout = setTimeout(startAnimation, 500);
     }, 8000);
 
-    return () => clearInterval(mainInterval);
+    return () => {
+      clearInterval(mainInterval);
+      if (typingInterval) clearInterval(typingInterval);
+      if (resetTimeout) clearTimeout(resetTimeout);
+    };
   }, []);
 
   const handleNavClick = (
