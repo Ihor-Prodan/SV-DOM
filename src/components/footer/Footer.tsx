@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
         </div> */}
       </div>
       <div className="footer-bottom">
-        <p>&copy; 2025 SV-DOM. Všetky práva vyhradené.</p>
+        <p>&copy; {new Date().getFullYear()} SV-DOM. Všetky práva vyhradené.</p>
       </div>
     </footer>
   );
